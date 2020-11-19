@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        button {
+            background-color: aqua;
+        }
+        input {
+            border-radius: 1px solid red;
+        }
+    </style>
+    
+    <div id="app">
+        
+        <h1>{{titulo}}</h1>
+        <span v-bind:title="message">este es clave para setiar el atributo</span>
+        <b v-if="seen">texto no reflejado</b>
+        <h2>{{numeroInicial}}</h2>
+        <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+        <button v-on:click="agregarFruta">agregar fruta</button>
+        <ul>
+            <li v-for ="fruta of frutas">{{fruta}}</li>
+        </ul>
+        <ul>
+            <li v-for ="fruta of frutas">
+                <input type="number" v-model.number="fruta.cantidad">
+                {{fruta.nombre}}
+                <button @click="fruta.cantidad++">+</button>
+                <span v-if="fruta.cantidad === 0"> - sin stock</span>
+            </li>
+            
+        </ul>
+        <h4>TOTAL: {{sumarFrutas}}</h4>
+        <br>
+        <br>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="01.js"></script>
+</body>
+</html>

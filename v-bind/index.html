@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-bind</title>
+</head>
+<body>
+  <div id="app">
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+    <h2>saldo disponible: {{cantidad > 1 ? catidad : 'Sin Saldo' }}</h2>
+    <h2>v-bind example 1</h2>
+    <a v-bind:href="enlaceYoutube">Youtube</a>
+    <h2>v-bind example 2</h2>
+    <a :href="enlaceYoutube">Youtube</a>
+    <img :src="enlaceImagen" :alt="descripcion">
+    <p :class="claseCss">Lorem ipsum dolor sit.</p>
+    <p :style="styleObject">Lorem ipsum dolor sit.</p>
+    <p  v-bind:style="{ color: ['violet'], border: ['1px solid red'] }">Lorem ipsum dolor sit.</p>
+  </div>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

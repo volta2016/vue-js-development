@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./saludo.js"></script>
+    <script src="contador.js"></script>
+</head>
+
+<body>
+    
+    <div id="app">
+        <saludo></saludo>
+        <contador></contador>
+        <contador></contador>
+        
+    </div>
+    
+<script>
+   
+    
+    new Vue({
+        el: '#app',
+        data: {
+            saludo: 'Hola saludos desde Vue js'
+        }
+    });
+</script>  
+</body>
+</html>

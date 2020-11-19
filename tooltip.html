@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    .tooltip {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        color: white;
+        width: 40px;
+    }
+    .tooltip img {
+        max-height: 20px;
+    }
+    .tooltip .tooltiptext {
+        width: 200px;
+        visibility: hidden;
+        background-color: #36383b;
+        color: white;
+        z-index: 10;
+        top: -5px;
+        left: 110%;
+        position: absolute;
+        padding: 10px;
+        border-radius: 6px;
+    }
+    .tooltip .tooltiptext::after {
+        content: " ";
+        position: absolute;
+        top: 15%;
+        right: 100%; /* To the left of the tooltip */
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent #36383b transparent transparent;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    .justify {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+</style>
+<body>
+    <section style="display: flex;justify-content: center;align-items: center; height: 400px;">
+        <div class="justify">
+            <div class="tooltip" style="background-color: blue;">
+                <img src="http://transportes.demosites.cl/wp-content/uploads/2020/08/pregunta.svg" alt="">
+                <span class="tooltiptext"><b>Carga consolidada:</b> 
+                    es un tipo de
+                    carga que combina envíos de varias compañías, que
+                    comparten el espacio y los costos del transporte según su
+                    mercancía. Al realizar diferentes entregas dentro de una sola
+                    ruta, las unidades se detienen varias veces para descargar
+                    odo su contenido.
+                </span>
+                <label for="" class="elementor-field-label"></label>
+            </div>
+            <div class="tooltip" style="background-color: blue;">
+                <img src="http://transportes.demosites.cl/wp-content/uploads/2020/08/pregunta.svg" alt="">
+                <span class="tooltiptext">
+                    <b>Carga completa:</b> 
+                    es un tipo de carga
+                    que sólo contiene mercancías de una compañía, productos
+                    delicados, de alto riesgo o urgentes. La mercancía que viaja
+                    en transportes de carga completa tiene menos probabilidad
+                    de sufrir daños porque no hay paradas y sólo pocos puntos
+                    de contacto, por lo que el seguro suele ser menos costoso.
+                </span>
+                <span>Hola *{SITE}*.Necesito información sobre: </span>
+                <span>Hola Necesitas ayuda ¿en que te podemos ayudar?
+                    +56978699049
+                </span>
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>
