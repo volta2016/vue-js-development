@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h2 v-if="estado">Cuenta activada</h2>
+    <h2 v-else>Cuenta desactivada</h2>
+    <span>ternario</span>
+    <h2>Saldo disponible: {{ cantidad > 1 ? cantidad : 'Sin saldo' }}</h2>
+    <span>otro programa</span>
+    <h2 v-if="count > 100">Cantidad: {{cantidad}}</h2>
+    <h2 v-else-if="count <= 100 && count > 0">
+      Cantidad: <span style="color:red">{{count}}</span>
+    </h2>
+    <h2 v-else>Sin cantidad: {{count}}</h2>
+
+  </div>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
