@@ -6,8 +6,8 @@ const app = new Vue({
         seen: false,
         message: `Cargaste esta pagina en ${new Date().toLocaleString()}`,
         numeroInicial: 00,
-        fruta: ['Mazana', 'Uva', 'Platano'],
-        frutas: [
+        frutas: ['Mazana', 'Uva', 'Platano'],
+        frutasGrupo: [
             {nombre :'Kiwi', cantidad: 11},
             {nombre :'Naranja', cantidad: 0},
             {nombre :'Mango', cantidad: 13}
