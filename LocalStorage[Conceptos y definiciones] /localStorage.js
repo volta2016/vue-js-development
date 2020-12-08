@@ -1,44 +1,68 @@
-/*Pensar como guardar la cadena de texto que es el color de la clase y que cuando
-actualizemos el sitio web este lo recuerde
+// Event Delegation
+// variables globales
+const btnButtons = document.querySelector('#btnButtons');
+const buttons = document.querySelector('#buttons');
+const back = document.querySelector('#back');
 
-2-. cuando nostros refrescamos el sitio web fijemonos que va estar de color blanco
-no le hemos dicho que lea la información del local Storage y cambie efectivamente el color
-que el usuario ha registrado entonces como podriamos leer la información podriamos hacerlo
-directamente en esta function auto ejecutable o podemos hacer otra así queda todo ordenado
-*/
+// funciones autoejecutable
+(() => {
+  btnButtons.addEventListener('click', addButtons);
+  buttons.addEventListener('click', delegation);
+})();
 
+// (() => {
+//   const color = localStorage.getItem('colorFondo');//colocamos cual es item que nosotros queremos leer, el key
+//   // console.log(color);
+//   if (color === null) {
+//     fondo.className = 'bg-dark'
+//   } else {
+//     fondo.className = color;
+//   }
+//   //si actualizado debería quedar con el color seleccionado
+// })();
 
-
-e.preventEventDefault();
-
-const colorButton = e.target.classList[1];
-  
-// actualizacion del value en el localStorage
-  switch (colorButton) {
+function delegation(e) {
+  e.preventDefault();
+  // console.log(e.target.classList[1]);
+  const colorButton = e.target.classList[1];
+  // actualizacion del value en el localStorage
+  switch(colorButton) {
     case "btn-primary":
-      fondo.className = "bg-primary";
-      localStorage.setItem('colorFondo', "btn-primary");
+      back.className = "bg-primary";
+      // background.setItem('colorFondo', "btn-primary");
       break;
-    case "btn-danger":
-      fondo.className = "bg-danger";
-      localStorage.setItem('colorFondo', "bg-danger");
+    case "btn-secondary":
+      back.className = "btn-secondary";
+      // background.setItem('colorFondo', "bg-danger");
       break;
     case "btn-warning":
-      fondo.className = "btn-warning";
-      localStorage.setItem('colorFondo', "btn-warning");
+      back.className = "btn-warning";
+      // background.setItem('colorFondo', "btn-warning");
       break;
-    case "btn-sencudary":
-      fondo className = "btn-sencudary"
-      localStorage.setItem('colorFondo', "btn-sencudary");
+    case "btn-danger":
+      back.className = "btn-danger";
+      // background.setItem('colorFondo', "btn-sencudary");
       break
     case "btn-success":
-      fondo className = "btn-success"
-      localStorage.setItem('colorFondo', "btn-success");
+      back.className = "btn-success";
+      // background.setItem('colorFondo', "btn-success");
       break
-
-    
-
   }
+}
+
+
+function addButtons(e) {
+  e.preventDefault();
+  buttons.innerHTML = `<button class="btn btn-primary">primary</button>
+  <button class="btn btn-secondary">secondary</button>
+  <button class="btn btn-danger">danger</button>
+  <button class="btn btn-success">success</button>
+  <button class="btn btn-warning">warning</button>`;
+}
+// const colorButton = e.target.classList[1];
+  
+
+
 
 
 
@@ -51,9 +75,3 @@ const colorButton = e.target.classList[1];
 // const nameLocalStorage = localStorage.getItem('class');
 // console.log(nameLocalStorage);
 // localStorage.removeItem('nameUser');
-
-
-
-
-
-
